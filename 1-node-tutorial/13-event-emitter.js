@@ -8,3 +8,4 @@ customEmitter.on('response', () => {
     console.log(`some other logic`)
 })
 customEmitter.emit('response','john',34)
+customEmitter.emit('response')
