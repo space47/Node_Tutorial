@@ -1,38 +1,22 @@
 const express = require('express')
-const {products,people} = require('./data')
 const app = express()
+const people = require('./routes/people')
+const auth = require('./routes/auth')
 
+// static assets
+app.use(express.static('./method-public'))
 
-app.get('/', (req,res) => {
-     res.send('<h1>Home Page</h1><a href="/api/products">products</a>')
-})
+// for post request with normal  / loginn
+// parse form data
+app.use(express.urlencoded({extended: false}))
+// for post request with javascirpt
+// parse json
+app.use(express.json())
 
-app.get('/api/products/1',(req,res)=>{
-    const singleProduct = products.find((product)=>product.id===1)
-    res.json(singleProduct)
-})
+app.use('/api/people',people)
 
-// for all id
-app.get('/api/products/:productID',(req,res)=>{
-    console.log(req.params)
-    const {productID} = req.params
-    const singleProduct = products.find((product)=>product.id===Number(productID))
-    if(!singleProduct){
-        return res.status(404).send('Product Does not exit')
-    }
-    // console.log(singleProduct)
-    res.json(singleProduct)
-})
+app.use('/login',auth)
 
-app.get('/api/products/:productID/reviews/:reviewID',(req,res)=>{
-    console.log(req.params)
-    res.send('Hello World')
-})
-
-app.all('*',(req,res)=>{
-    res.status(404).send('Resource not found')
-})
-app.listen(5000, () => {
+app.listen(5000,()=>{
     console.log('Server is listening on port 5000...')
 })
-

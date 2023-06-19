@@ -1,5 +1,4 @@
-const {readFile, read} = require('fs')
-const { result } = require('lodash')
+const {readFile} = require('fs')
 
 console.log('started a first task')
 
