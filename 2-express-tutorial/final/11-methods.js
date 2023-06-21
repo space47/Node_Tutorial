@@ -7,7 +7,7 @@ app.use(express.static('../method-public'))
 
 // for post request with normal  / login
 // parse form data
-// app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: false}))
 // for post request with javascirpt
 // parse json
 app.use(express.json())

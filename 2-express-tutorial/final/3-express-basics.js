@@ -7,7 +7,6 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
     res.status(200).send('About Page')
 })
-
 app.all('*',(req,res)=>{
     res.status(404).send('</h1>resource not found</h1>')
 })

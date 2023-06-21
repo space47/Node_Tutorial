@@ -11,7 +11,6 @@ app.get("/api/products", (req, res) => {
     const { id, name, image } = product;
     return { id, name, image };
   });
-
   res.json(newProducts);
 });
 
