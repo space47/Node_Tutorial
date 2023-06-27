@@ -1,4 +1,5 @@
 const authorize = (req,res,next)=>{
+    console.log(req)
     const {user} = req.query;
     if(user == 'john'){
         req.user = {name: 'John', id: 3}

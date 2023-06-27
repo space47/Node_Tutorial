@@ -8,7 +8,7 @@ const getAllJobs = async (req, res) => {
 };
 
 const getJob = async (req, res) => {
-  console.log(req.user)
+  console.log("Hi"+req.user)
   // take out userId from req.user
   // take out the id from req.params and put into jobId
   const {

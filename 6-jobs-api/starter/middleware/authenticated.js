@@ -21,7 +21,7 @@ const auth = async (req,res,next) => {
         // req.user = user
 
         const {userId, name} = payload
-        console.log(payload)
+        console.log("In authentication"+{payload})
         req.user = {userId,name}
         next()
     } catch (error) {

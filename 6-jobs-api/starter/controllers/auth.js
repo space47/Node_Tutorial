@@ -20,7 +20,7 @@ const register = async (req,res) => {
     // const user =await User.create({...tempUser})
 
     // or do it in schema
-    const user =await User.create({...req.body})
+    const user = await User.create({...req.body})
     // const token = jwt.sign({userId: user._id, name: user.name}, 'jwtSecret',{
     //     expiresIn: '30d'
     // })

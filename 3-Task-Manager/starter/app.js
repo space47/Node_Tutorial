@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 // for routes
@@ -11,7 +12,6 @@ const notfound = require("./middleware/not-found");
 // for custom error handling
 const errorHandlerMiddleware = require("./middleware/errorHandlerMiddleware");
 // for handling enviroment variable
-require("dotenv").config();
 
 // middleware
 app.use(express.static("./public"));
@@ -22,9 +22,12 @@ app.use(express.json());
 app.use("/api/v1/tasks", tasks);
 
 // middleware to handle unknown address error
-app.use(notfound);
 // middleware to handle error 
-app.use(errorHandlerMiddleware);
+// app.get('*',(req,res)=>{
+  //   res.send('router not exist')
+  // })
+  app.use(errorHandlerMiddleware);
+  app.use(notfound);
 
 // to set a custom port
 const port = process.env.PORT || 3000;

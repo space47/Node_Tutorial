@@ -1,11 +1,9 @@
 console.log('express-tutorial')
 const http = require('http')
 
-
 //this below call back will be invoked every time user gets to our server
 const server = http.createServer((req,res)=>{
     const url = req.url;
-
     if(url==='/'){
         res.writeHead(200,{'content-type': 'text/html'})
         res.write('<h1>Home Page</h1>')

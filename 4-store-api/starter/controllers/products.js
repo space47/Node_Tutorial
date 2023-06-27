@@ -44,7 +44,9 @@ const getAllProducts = async (req,res) => {
         })
     }
     console.log(queryObject)
+
     let result =  Product.find(queryObject)
+    
     if(sort){
         const sortList = sort.split(',').join(' ')
         result = result.sort(sortList)

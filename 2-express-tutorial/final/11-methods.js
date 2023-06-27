@@ -50,7 +50,7 @@ app.post('/api/people/postman',(req,res)=>{
     people.push(newUser)
     return res
         .status(200)
-        .send({sucess:false,data: [...people,newUser]})
+        .send({sucess:true,data: [...people,newUser]})
 })
 
 

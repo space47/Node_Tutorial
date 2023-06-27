@@ -15,7 +15,7 @@ const errorHandlerMiddleware = require('./middleware/error-Handler')
 // middlewares
 app.use(express.json())
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4200
 
 app.get('/',(req,res) => {
     res.send('<h1> Store API </h1><a href="/api/v1/products">products route</a>')

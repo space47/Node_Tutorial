@@ -50,7 +50,7 @@ const start = async () => {
     }
 }
 start()
-
+console.log('writing')
 
 // const {readFile, writeFile} = require('fs')
 

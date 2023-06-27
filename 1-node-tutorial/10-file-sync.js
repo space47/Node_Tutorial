@@ -1,4 +1,4 @@
-const {readFileSync, writeFileSync, write} = require('fs')
+const {readFileSync, writeFileSync} = require('fs')
 
 console.log('start')
 
