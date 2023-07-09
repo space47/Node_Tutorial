@@ -15,7 +15,8 @@ const connectDB = require('./db/connect')
 // routers
 const authRouter = require('./routes/auth')
 const jobsRouter = require('./routes/jobs')
-const authentication = require('./middleware/authenticated')
+// middleware
+const authenticationMiddleware = require('./middleware/authenticated')
 
 // error handler import
 const notFoundMiddleware = require('./middleware/not-found')
@@ -33,7 +34,7 @@ app.use(xss())
 
 // routes 
 app.use('/api/v1/auth',authRouter)
-app.use('/api/v1/jobs',authentication,jobsRouter)
+app.use('/api/v1/jobs',authenticationMiddleware,jobsRouter)
 
 //using error handler middlewares
 

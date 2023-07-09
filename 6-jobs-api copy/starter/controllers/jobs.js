@@ -93,10 +93,10 @@ const updateJob = async (req, res) => {
   }
   const job = await Job.findByIdAndUpdate(
     {_id: jobId, createdBy: userId},
-    {company,position},
+    {company,position},// value to be updated
     {new: true, runValidators: true})
   if(!job){
-    console.log(job)
+    // console.log(job)
     throw new NotFoundError(`No job with id ${jobId}`)
   }
   res.status(StatusCodes.OK).json({job})

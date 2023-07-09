@@ -6,6 +6,7 @@
 const  jwt = require('jsonwebtoken')
 const { BadRequestError } = require("../errors");
 
+// this one has only login
 const login = async (req,res) => {
     const {username,password} = req.body
 
@@ -26,6 +27,7 @@ const login = async (req,res) => {
     // just for demo, in production use long, complex and ungussable string value
     // it will create a token during authentication
     const token = jwt.sign({id,username}, process.env.JWT_SECRET,{expiresIn:'30d'})
+    // will verify jwt token in authenticatedMiddleware
     res.status(200).json({msg: 'user created', token})
 }
 

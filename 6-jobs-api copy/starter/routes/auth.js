@@ -17,6 +17,7 @@ const apiLimiter  = rateLimiter({
 
 router.post('/register',apiLimiter,register)
 router.post('/login',apiLimiter,login)
+// throw an error if user is test user, check it by using testUser middleware
 router.patch('/updateUser',authenticateMiddleWare,testUser,updateUser)
      
 module.exports = router

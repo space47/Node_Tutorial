@@ -26,6 +26,7 @@ const UserSchema = new mongoose.Schema({
 })
 
 // below lines of code will hash the  password using mongoose middleware
+// it will be called before the document is created or updated or if .save() is called
 UserSchema.pre('save',async function () {
     const salt = await bcrypt.genSalt (10)
     this.password  = await bcrypt.hash(this.password,salt)

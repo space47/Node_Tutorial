@@ -28,6 +28,7 @@ const start = async () => {
     try {
         // // by using only await and getText
         // //call getText function
+        // standard way
         const first = await getText('./content/first.txt')
         const second = await getText('./content/second.txt')
 
